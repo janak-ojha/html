@@ -1,0 +1,43 @@
+p{
+    color:green;
+}
+a{
+    color: red;
+}
+li{
+    list-style-type:square;
+}
+span.special,
+li.special{
+    color: aqua;
+    font-weight: bold;
+}
+li em{
+    color: burlywood;
+    font-weight: bold;
+
+}
+h1+p{
+    font-size: 200%;
+    color: blue;
+}
+a:hover{
+    color: black;
+    text-decoration: none;
+}
+body h1+p .special{
+    color: green;
+    background-color: black;
+    padding: 5px;
+}
+#heading{
+    color: aquamarine;
+    background-color: blue;
+    font-size: 200%;
+
+}
+#oneto{
+    color: aliceblue;
+    background-color:black;
+    font-size: 300%;
+}

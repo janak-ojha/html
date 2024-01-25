@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#textCss{
+font-family: 'Agdasima', sans-serif;
+font-family: 'Caprasimo', cursive;
+font-family: 'Fasthand', cursive;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Pacifico', cursive;
+color: blue;
+letter-spacing: 2px;
+word-spacing: 5px;
+/* direction: ltr;
+text-indent: 20%; */
+text-align: center;
+text-transform: uppercase;
+}
