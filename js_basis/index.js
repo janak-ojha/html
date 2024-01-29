@@ -181,21 +181,16 @@ function Mobile(brand,price,launchdate)
     this.launchdate=launchdate;
 }
 
-Mobile.prototype.ram="4gb";
-Mobile.prototype.getLaunchYear=function()
-{
-    return this.launchdate.getFullYear();
-};
 
 
 const s2=new Mobile("samsung","$250","02/11/2019");
 const onplus=new Mobile("samsung","$300","2/22/2040");
-console.log(s2.getLaunchYear());
+
 console.log(onplus);
 
 
 //window object and dom
-console.log(window.location);
+console.log(window.document);
 
 
 
