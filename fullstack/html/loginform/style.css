@@ -47,12 +47,13 @@ button,input[type="submit"]
 
 }
 .container{
-    height: 10vh;
+    height: 8vh;
     width: 80%;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 
 }
 .logo{
