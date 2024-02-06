@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    < method="post" enctype="multipart/form-data">
+        <fieldset>
+        <legend><font face="cursive" size="5">personal detail</font></legend>
+        
+        <center>
+            <font face="cursive" size="4">
+            <table width="50%" border="3" >
+                <tr>
+                    <td><label for="txtuid">Uid*</label></td>
+                    <td><input type="text" name="txtuid" 
+                        value="101" readonly /></td>
+                </tr>
+                <tr>
+                    <td><label for="txtuname">Username*</label></td>
+                    <td><input type="text" name="txtuname" 
+                        required
+                        placeholder="ENTER USERNAME"
+                        oninvalid="setCustomValidity('username required')"
+                        oninput="setCustomValidity('')"
+                        maxlength="15"
+                        size="50"
+                        /></td>
+                </tr>
+            <tr>
+                <td><label for="txtpass">Password*</label></td>
+                <td><input type="password" name="txtpass" 
+                    required
+                    placeholder="ENTER PASSWORD"
+                    oninvalid="setCustomValidity('password required')"
+                    oninput="setCustomValidity('')"
+                    maxlength="10"
+                    size="50"
+                    /></td>
+            </tr> 
+            <tr>
+                <td><label for="txtemail">Email*</label></td>
+                <td><input type="email" name="txtemail"                 
+                    placeholder="ENTER PASSWORD"
+                    required
+                    maxlength="20"
+                    size="50"
+                    /></td>
+            </tr>
+            <tr>
+                <td><label>DOB</label></td>
+                <td><input type="datetime-local" min="2000-01-01" 
+                    max="2025-12-31"></td>
+            </tr>
+            <tr>
+                <td><label>Gender</label></td>
+                <td>
+                    <label for="male">Male</label>
+                    <input type="radio" 
+                    name="gen" id="male" 
+                    value="m">
+                    <label for="female">Female</label>
+                    <input type="radio" 
+                    name="gen" id="female" 
+                    value="f" checked></td>
+            </tr>
+           
+            
+            <tr>
+                <td><label>Skills</label></td>
+                <td>
+                    <label for="Software developer">Software developer</label><input type="radio" name="lang[]" 
+                    id="Software developer" value="Software developer">
+                    <label for="web developer">web develope</label><input type="radio" name="lang[]" 
+                    id="web developer" value="web developer">
+                    <label for="data analyst">data analyst</label><input type="radio" name="lang[]" 
+                    id="data analyst" value="data analyst">
+                    <label for="marketing manager">marketing manager</label><input type="radio" name="lang[]" 
+                    id="marketing manager" value="marketing manager">   
+
+                </td>
+            </tr>  
+            <tr>
+                <td><label>nation-city</label></td>
+                <td><select>
+                    <optgroup label="Nepal">
+                        <option value="Kanchanpur">Kanchanpur</option>
+                        <option value="dhangadhi">dhangadhi</option>
+                        <option value="kathmandu">kathmandu</option>
+                    </optgroup>
+                    <optgroup label="India">
+                        <option value="Dehradun">Dehradun</option>
+                        <option value="Haridwar">Haridwar</option>
+                        <option value="Roorkee">Roorkee</option>
+                    </optgroup>
+                    
+                </select></td>
+            </tr>
+            <tr>
+                <td><label>Dream Company</label></td>
+                <td>
+                    <input type="text" name="dc" list="cl" />
+                    <datalist id="cl">
+                        <option value="Mentor Graphics" />
+                        <option value="ICS" />
+                        <option value="Tesla" />
+                        <option value="Google" />
+                        <option value="Info" />
+                        <option value="Infogain" />
+                        <option value="Wipro" />
+                        <option value="Micro soft" />
+                    </datalist>
+                </td>
+            </tr>
+        
+        
+        
+            </table>
+        </font>
+        </center>
+        
+    </fieldset>
+    
+  
+        <fieldset>
+        <legend><font face="cursive" size="5">Academic Qualification</font></legend>
+        
+        <center>
+            <font face="cursive" size="4">
+            <table width="50%" border="3" >
+               
+                
+          
+          
+            <tr>
+                <td>
+                    Higest Qualification
+                </td>
+                <td>
+                    <select name ="hq">
+                        <option value="hs">High S</option>
+                        <option value="im">Inter</option>
+                        <option value="di">Diploma</option>
+                        <option value="gr" selected>Graduation</option>
+                        <option value="pgr">P Graduation</option>
+                        <option value="phd">Phd</option>                    
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>College name of graduation</label></td>
+                <td>
+                    <label for="Tulas">Tulas</label><input type="radio" name="lang[]" 
+                    id="Tulas" value="Tulas">
+                    <label for="Shivalek">Shivalek</label><input type="radio" name="lang[]" 
+                    id="Shivalek" value="Shivalek">
+                    <label for="Maya">Maya</label><input type="radio" name="lang[]" 
+                    id="Maya" value="Maya">
+                    <label for="JBIT">JBIT</label><input type="radio" name="lang[]" 
+                    id="JBIT" value="JBIT" checked >       
+
+                </td>
+            </tr>  
+            
+           
+           
+        
+        <tr>
+            <td><label>Upload image< intermediate certificate*/</label></td>
+            <td><input type="file" name="file"   oninvalid="setCustomValidity('certificate requires')"
+                oninput="setCustomValidity('')"/></td>
+        </tr>
+        <tr>
+            <td><label>Upload image< highschool certificate*</label></td>
+            <td><input type="file" name="file"   oninvalid="setCustomValidity('certificate requires')"
+                oninput="setCustomValidity('')"/></td>
+        </tr>
+        <tr>
+            <td><label>Upload image< graduation certificate* </label></td>
+            <td><input type="file" name="file"  oninvalid="setCustomValidity('certificate requires')"
+                oninput="setCustomValidity('')" /></td>
+        </tr>
+        
+           
+            </table>
+        </font>
+        </center>
+
+        
+    </fieldset>
+    
+    
+        <fieldset>
+        <legend><font face="cursive" size="5">Submission form</font></legend>
+        
+        <center>
+            <font face="cursive" size="4">
+            <table width="50%" border="3" >
+           
+            <tr>
+                <td><input type="submit" name="sbt1"  /></td>
+                <td><input type="submit" name="sbt2" formnovalidate /></td>
+                <td><input type="reset" name="reset"  /> </td>
+            </tr>
+            </table>
+        </font>
+        </center>
+        
+    </fieldset>
+    
+</body>
+</html>
