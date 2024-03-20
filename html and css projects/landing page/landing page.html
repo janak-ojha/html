@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Your Trip</title>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .container{
+        position: relative;
+        display: flex;
+        position: fixed;
+        text-align: center;
+        box-sizing: border-box;
+        border: 2px solid black; 
+        height: 100%;
+        width: 100%;
+    }
+    .photos{
+        background-color: #F15B46;
+        align-items: center;
+        text-align: center;
+        flex: 1;
+        
+        width: 50%;
+    }
+    .card {
+        width: 50%;
+        text-align: left;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+      }
+      
+      .card {
+        text-align: left;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        background-color: lightblue;
+      }
+      
+      .card h2 {
+        text-align: center;
+        font-size: 50px;
+        margin-bottom: 40px;
+      }
+      
+      .card p {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 50px;
+      }
+      
+      .form-group {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+    
+      }
+      
+     .container.card.forms.form-group label {
+        width: 200px;
+        margin-right: 10px;
+        font-size: 14px;
+    
+        
+      }
+      .container.card.forms.form-group input
+      {
+        width: 100%;
+        outline: none;
+        border: 1px solid  rgb(116, 226, 189) ;
+        font-size: 15px;
+        padding: 8px 10px;
+        border-radius: 3px;
+        transition: all 0.5s ease;
+    
+      }
+     
+      input[type="text"],
+      input[type="date"],
+      input[type="number"] {
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        margin-right: 100px;
+        background-color: #f5f5f5;
+      }
+      
+      .btn {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      
+      .btn:hover {
+        background-color: #0056b3;
+      }
+      .labels{
+        width: 40%;
+      }
+     .buttons{
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      
+       
+        display: flex;
+     }
+    
+     #downloadQR{
+        
+        width: 30%;
+        margin-left: 74px;
+        
+     }
+     
+      
+  
+
+  
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="photos">
+        <div class="photo">
+         <img src="http://source.unsplash.com/675x800/?monument,india" class="d-block w-100" alt="...">
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Book Your Trip</h2>
+      <p>You are welcome</p>
+      <form class="forms" id="whatsappForm">
+        <div class="form-group">
+          <label class="labels" for="name">Full name:</label>
+          <input type="text" id="name" placeholder="First name" required>
+        </div>
+        <div class="form-group">
+          <label class="labels" for="city">City:</label>
+          <input type="text" id="city" placeholder="City name" required>
+        </div>
+        <div class="form-group">
+          <label class="labels" for="monument">Monument Name:</label>
+          <input type="text" id="monument" value="" placeholder="Monument Name" required>
+        </div>
+        <div class="form-group">
+          <label class="labels" for="email">Contact Email:</label>
+          <input type="text" id="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <label class="labels" for="aadhar">Adhar Number:</label>
+          <input type="text" id="aadhar" placeholder="xxxx-xxxx-xxxx" required>
+        </div>
+        <div class="form-group">
+          <label class="labels" for="whatsapp">WhatsApp Number:</label>
+          <input type="text" id="whatsapp" placeholder="WhatsApp Number" required>
+        </div>
+        <div class="form-group">
+          <label class="labels" for="date">Date:</label>
+          <input type="date" id="date" required>
+        </div>
+        <div class="form-group">
+          <label class="labels" for="tickets">Number of Tickets:</label>
+          <input type="number" id="tickets" placeholder="Number of Tickets" required>
+        </div>
+        <div class="buttons">
+        <button type="button" id="genn" class="btn" onclick="generateQR()">Generate QR Code</button>
+        <button id="downloadQR"  class="btn" style="display: none;">Download QR Code</button>
+    </div>
+   
+      </form>
+     
+    </div>
+    
+    
+
+  <script>
+    function generateQR() {
+      var name = document.getElementById('name').value;
+      var city = document.getElementById('city').value;
+      var monument = document.getElementById('monument').value;
+      var email = document.getElementById('email').value;
+      var aadhar = document.getElementById('aadhar').value;
+      var whatsapp = document.getElementById('whatsapp').value;
+      var date = document.getElementById('date').value;
+      var tickets = document.getElementById('tickets').value;
+
+      var qrData = `Name: ${name}\nCity: ${city}\nMonument Name: ${monument}\nContact Email: ${email}\nAdhar Number: ${aadhar}\nWhatsApp Number: ${whatsapp}\nDate: ${date}\nNumber of Tickets: ${tickets}`;
+      
+      var qr = new QRious({
+        element: document.getElementById('qrCode'),
+        value: qrData
+      });
+
+      document.getElementById('downloadQR').style.display = 'block';
+    }
+
+    document.getElementById('downloadQR').addEventListener('click', function() {
+      var qrCanvas = document.getElementById('qrCode').getElementsByTagName('canvas')[0];
+      var qrDataURL = qrCanvas.toDataURL('image/png');
+      
+      var link = document.createElement('a');
+      link.href = qrDataURL;
+      link.download = 'qr-code.png';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  </script>
+</body>
+</html>
